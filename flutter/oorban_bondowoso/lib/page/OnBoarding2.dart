@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:oorban_bondowoso/page/OnBoarding2.dart';
 import 'package:oorban_bondowoso/page/OnBoarding3.dart';
 import 'package:oorban_bondowoso/theme.dart';
 
-class OnBoarding1 extends StatelessWidget {
-  get greyFontStyle2 => null;
+class OnBoarding2 extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
@@ -12,7 +10,7 @@ class OnBoarding1 extends StatelessWidget {
       body: SafeArea(
         child: Stack(
          children: [
-            Image.asset('asset/logo/vektor1.png'),
+            Image.asset('asset/logo/vektor2.png'),
             Padding(
           padding: EdgeInsets.only(
             top: 20,
@@ -29,8 +27,8 @@ class OnBoarding1 extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                   builder: (context) => OnBoarding3()),
-                              );
-                            },
+                               );
+                              },
                   child: Text('Lewati',
                   style: blackTextStlye.copyWith(
                     fontSize: 14,),
@@ -41,31 +39,31 @@ class OnBoarding1 extends StatelessWidget {
             SizedBox(
               height: 70,
             ),
+            Text(
+             'Temukan Property Anda Disini',
+             style: blackTextStlye.copyWith(
+               fontSize: 23)
+            ),
+            SizedBox(
+              height: 20
+            ),
+            Text('Cari Property yang Anda Butuhkan Dengan\n Harga yang Bersahabat Dijamin\n Puas terhadap Fasilitas',
+            textAlign: TextAlign.center,
+            style: TextStyle(color: Colors.grey[600],
+             fontSize: 15
+             ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
             Container(
               height: 279,
               width: 279,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('asset/logo/ilus1.png'),
+                  image: AssetImage('asset/logo/ilus2.png'),
                  ),
               ),
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Text(
-             'Mari Bergabung dengan Kami',
-             style: blackTextStlye.copyWith(
-               fontSize: 23)
-            ),
-            SizedBox(
-              height: 30
-            ),
-            Text('Berbagai Macam Property yang\nAnda Butuhkan Ada disini',
-            textAlign: TextAlign.center,
-            style: TextStyle(color: Colors.grey[600],
-             fontSize: 15
-             ),
             ),
             SizedBox(
               height: 50,
@@ -77,7 +75,7 @@ class OnBoarding1 extends StatelessWidget {
                   onPressed: () {Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => OnBoarding2()),
+                                  builder: (context) => OnBoarding3()),
                             );},
                   color: greenColor,
                   shape: RoundedRectangleBorder(
@@ -86,9 +84,9 @@ class OnBoarding1 extends StatelessWidget {
                   child: Text('Berikutnya -->',
                   style: blackTextStlye.copyWith(
                     fontSize: 14,
-                   ),
                   ),
-                )
+                ),
+               ),
               ],
             ),
           ],

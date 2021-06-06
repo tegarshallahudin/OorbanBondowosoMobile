@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:oorban_bondowoso/page/OnBoarding2.dart';
-import 'package:oorban_bondowoso/page/OnBoarding3.dart';
+import 'package:oorban_bondowoso/page/OnBoarding1.dart';
 import 'package:oorban_bondowoso/theme.dart';
 
-class OnBoarding1 extends StatelessWidget {
-  get greyFontStyle2 => null;
+class OnBoarding3 extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
@@ -12,7 +10,7 @@ class OnBoarding1 extends StatelessWidget {
       body: SafeArea(
         child: Stack(
          children: [
-            Image.asset('asset/logo/vektor1.png'),
+            Image.asset('asset/logo/vektor3.png'),
             Padding(
           padding: EdgeInsets.only(
             top: 20,
@@ -21,47 +19,31 @@ class OnBoarding1 extends StatelessWidget {
         child: Center(
         child: Column( 
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: <Widget>[
-                TextButton(
-                  onPressed: () {Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => OnBoarding3()),
-                              );
-                            },
-                  child: Text('Lewati',
-                  style: blackTextStlye.copyWith(
-                    fontSize: 14,),
-                 ),
-                ),
-              ],
-            ),
             SizedBox(
-              height: 70,
+              height: 100,
             ),
             Container(
-              height: 279,
-              width: 279,
+              height: 250,
+              width: 250,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('asset/logo/ilus1.png'),
+                  image: AssetImage('asset/logo/ilus3.png'),
                  ),
               ),
             ),
             SizedBox(
-              height: 30,
+              height: 10,
             ),
             Text(
-             'Mari Bergabung dengan Kami',
+             'Selamat Datang di\nOorban Bondowoso',
+             textAlign: TextAlign.center,
              style: blackTextStlye.copyWith(
-               fontSize: 23)
+               fontSize: 28)
             ),
             SizedBox(
-              height: 30
+              height: 20
             ),
-            Text('Berbagai Macam Property yang\nAnda Butuhkan Ada disini',
+            Text('Nikmati Perjalanan Anda Menemukan\nProperty Idaman Anda',
             textAlign: TextAlign.center,
             style: TextStyle(color: Colors.grey[600],
              fontSize: 15
@@ -77,13 +59,13 @@ class OnBoarding1 extends StatelessWidget {
                   onPressed: () {Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => OnBoarding2()),
+                                  builder: (context) => OnBoarding1()),
                             );},
                   color: greenColor,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(13),
                   ),
-                  child: Text('Berikutnya -->',
+                  child: Text('Mulai',
                   style: blackTextStlye.copyWith(
                     fontSize: 14,
                    ),
