@@ -68,28 +68,25 @@ class OnBoarding1 extends StatelessWidget {
              ),
             ),
             SizedBox(
-              height: 50,
+              height: 30,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                RaisedButton(
-                  onPressed: () {Navigator.push(
+            SizedBox(
+              width: 200,
+              child: ElevatedButton( onPressed: (){Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => OnBoarding2()),
-                            );},
-                  color: greenColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(13),
-                  ),
-                  child: Text('Berikutnya -->',
-                  style: blackTextStlye.copyWith(
-                    fontSize: 14,
-                   ),
-                  ),
-                )
-              ],
+                            );}, child: Text('Berikutnya -->', style: blackTextStlye,),
+              style: ButtonStyle(
+                
+                backgroundColor: MaterialStateProperty.all(greenColor),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  )
+                ),
+               ),
+              ),
             ),
           ],
          ),

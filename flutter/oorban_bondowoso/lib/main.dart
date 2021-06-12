@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:oorban_bondowoso/page/OnBoarding2.dart';
+import 'package:oorban_bondowoso/page/OnBoarding3.dart';
+import 'package:oorban_bondowoso/page/login.dart';
+import 'package:oorban_bondowoso/page/registrasi.dart';
 import 'package:oorban_bondowoso/page/splash.dart';
 
 void main() {

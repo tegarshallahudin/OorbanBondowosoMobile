@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:oorban_bondowoso/page/OnBoarding1.dart';
+import 'package:oorban_bondowoso/page/login.dart';
 import 'package:oorban_bondowoso/theme.dart';
 
 class OnBoarding3 extends StatelessWidget {
@@ -50,28 +51,25 @@ class OnBoarding3 extends StatelessWidget {
              ),
             ),
             SizedBox(
-              height: 50,
+              height: 30,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                RaisedButton(
-                  onPressed: () {Navigator.push(
+            SizedBox(
+              width: 200,
+              child: ElevatedButton( onPressed: (){Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => OnBoarding1()),
-                            );},
-                  color: greenColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(13),
-                  ),
-                  child: Text('Mulai',
-                  style: blackTextStlye.copyWith(
-                    fontSize: 14,
-                   ),
-                  ),
-                )
-              ],
+                                  builder: (context) => Login()),
+                            );}, child: Text('Mulai', style: blackTextStlye,),
+              style: ButtonStyle(
+                
+                backgroundColor: MaterialStateProperty.all(greenColor),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  )
+                ),
+               ),
+              ),
             ),
           ],
          ),
