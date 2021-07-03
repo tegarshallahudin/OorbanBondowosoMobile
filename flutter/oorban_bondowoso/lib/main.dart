@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:oorban_bondowoso/page/OnBoarding2.dart';
 import 'package:oorban_bondowoso/page/OnBoarding3.dart';
+import 'package:oorban_bondowoso/page/home.dart';
 import 'package:oorban_bondowoso/page/login.dart';
 import 'package:oorban_bondowoso/page/registrasi.dart';
 import 'package:oorban_bondowoso/page/splash.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SplashPage(),
+      home: Home(),
     );
   }
 }

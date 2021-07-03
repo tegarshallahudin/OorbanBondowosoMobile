@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:oorban_bondowoso/page/OnBoarding1.dart';
 import 'package:oorban_bondowoso/page/OnBoarding2.dart';
+import 'package:oorban_bondowoso/page/home.dart';
 import 'package:oorban_bondowoso/page/registrasi.dart';
 import 'package:oorban_bondowoso/theme.dart';
 import 'package:flutter/gestures.dart';
@@ -73,14 +74,111 @@ class Login extends StatelessWidget {
             ],),
           ),
         ),
-        SizedBox(height: 5.0,),
-              SizedBox(
+        SizedBox(height: 3.0,),
+            SizedBox(
               width: 300,
-              child: ElevatedButton( onPressed: (){Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => OnBoarding1()),
-                            );}, child: Text('Log in',style: blackTextStlye,),
+              child: ElevatedButton( onPressed: (){ showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    title: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Text(
+                        'Apakah Username dan Password Anda Sudah Benar ?',
+                        style: blackTextStlye
+                      ),
+                    ),
+                    scrollable: true,
+                    content: Container(
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: Form(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              ElevatedButton(
+                                onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Login()),
+                                    );},
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    "Urungkan",
+                                    style: blackTextStlye
+                                  ),
+                                ),
+                                style: ButtonStyle(
+                                    backgroundColor:
+                                        MaterialStateProperty.all<Color>(
+                                            Colors.white),
+                                    shape: MaterialStateProperty.all<
+                                            RoundedRectangleBorder>(
+                                        RoundedRectangleBorder(
+                                      side: BorderSide(
+                                          color: blueColor),
+                                      borderRadius: BorderRadius.circular(18.0),
+                                    ))),
+                              ),
+                              ElevatedButton(
+                                onPressed: () {showDialog(
+                                      context: context,
+                                      builder: (BuildContext context) {
+                                        return AlertDialog(
+                                          shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(20)),
+                                          content: Container(
+                                            height: 100,
+                                            child: Column( mainAxisAlignment: MainAxisAlignment.center,
+                                              children: [
+                                                 Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(8.0),
+                                                    child:Icon(
+                                                      Icons.check,
+                                                      color: greenColor,
+                                                      size: 60
+                                                      ),
+                                                  ),
+                                                 Text('Selamat Anda Berhasil Log in',style: blueTextStlye),
+                                              ],
+                                            ),
+                                          ),
+                                        );
+                                      });
+                                  Future.delayed(Duration(seconds: 3), () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Home()),
+                                    );
+                                  });
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    "Ya, Lanjutkan",
+                                    style: blackTextStlye
+                                  ),
+                                ),
+                                style: ButtonStyle(
+                                    shape: MaterialStateProperty.all<
+                                            RoundedRectangleBorder>(
+                                        RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(18.0),
+                                ))),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      width: MediaQuery.of(context).size.width,
+                    ),
+                  );
+                });}, child: Text('Log in',style: blackTextStlye,),
               style: ButtonStyle(
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(
@@ -92,10 +190,10 @@ class Login extends StatelessWidget {
             SizedBox(
               width: 300,
               child: ElevatedButton( onPressed: (){Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Register()),
-                            );}, child: Text('Register',style: blackTextStlye,),
+               context,
+                MaterialPageRoute(
+                  builder: (context) => Register()),
+                  );}, child: Text('Register',style: blackTextStlye,),
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(greenColor),
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(

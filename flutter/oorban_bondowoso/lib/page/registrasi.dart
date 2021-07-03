@@ -24,7 +24,7 @@ class Register extends StatelessWidget {
           padding: const EdgeInsets.all(28.0),
           child: Container(
             decoration: BoxDecoration(
-            image: DecorationImage(image: AssetImage('asset/logo/ilus1.png')),color:Colors.grey[300], borderRadius: BorderRadius.all(Radius.circular(10))),
+            image: DecorationImage(image: AssetImage('asset/logo/ilus4.png')),color:Colors.grey[300], borderRadius: BorderRadius.all(Radius.circular(10))),
             child: Column(children: [
               Padding(
                 padding: const EdgeInsets.only(top: 5),
