@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:oorban_bondowoso/layout.dart';
 import 'package:oorban_bondowoso/layout.dart';
+import 'package:oorban_bondowoso/page/login.dart';
 import 'package:oorban_bondowoso/theme.dart';
 
 class Home extends StatefulWidget {
@@ -12,41 +13,61 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: 
-    Container(
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      body: Container(
       width: double.infinity,
-      decoration: BoxDecoration(image: DecorationImage(image: AssetImage('asset/logo/vektor6.png'))),
+      decoration: BoxDecoration(
+        image: DecorationImage(image: AssetImage('asset/logo/vektor9.png'),
+        fit: BoxFit.cover)),
       child: Column(
         children: <Widget>[
           Stack(
             children: [
-              Container( color: Colors.grey,
+              Container( 
                 height: 150,
                 width: MediaQuery.of(context).size.width,
-                child: Row(
+                color: Colors.blueGrey,
+                child :Row(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 15.0,left: 30.0, top: 45.0),
-                      child: Image(image: AssetImage('asset/logo/Group_1.png'), width: 120,),
+                    Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(top: 60, left: 8),
+                          child:Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Row(mainAxisAlignment: MainAxisAlignment.start,
+                              children:<Widget>[
+                                Icon(Icons.arrow_back, color: whiteColor, size: 20,),
+                                Padding(padding: const EdgeInsets.only(left: 20)),
+                                Text('Home',style: whiteTextStlye20,),
+                                Padding(
+                                padding: const EdgeInsets.only(left: 130.0),
+                                child:Image(image: AssetImage('asset/logo/Group_1.png'), height: 45.0,)),
+                              ],
+                            ),
+                          )
+                        ),
+                      ],
                     )
                   ],
                 ),
-              ),
+                ),
               Stack( 
                 children: [
                   Row( mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(width: 350,
+                      Container(width: 340,
                         child: Padding(
                           padding: const EdgeInsets.only(top:120.0),
                           child: TextField(
                             decoration: InputDecoration( border: OutlineInputBorder(
                               borderSide: BorderSide.none,
                               borderRadius: BorderRadius.circular(15)),
-                            hintText: 'Pencarian Property Idaman Anda',
-                            hintStyle: greyTextStlye,
-                            prefixIcon: Icon(Icons.search),
-                            fillColor: Colors.white,
+                            hintText: 'Cari Property Idaman Anda',
+                            hintStyle: whiteTextStlye,
+                            prefixIcon: Icon(Icons.search, color: whiteColor,),focusColor: whiteColor,
+                            fillColor: Colors.grey,
                             filled: true,
                             ),
                           ),
@@ -63,16 +84,18 @@ class _HomeState extends State<Home> {
           Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              Container(
-                height: 150,
-                width: 360,
-                 child: Card(
+              Card(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0),
                   ),
-                  color: Colors.grey,
+                  color: Colors.blueGrey,
                   elevation: 20,
-                  child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  child: SizedBox(
+                   height: 150,
+                   width: 360,
+                   child: InkWell(splashColor: Colors.deepPurple,
+                   onTap: (){},
+                   child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Image(image: AssetImage('asset/logo/prop1.png'),width: 120,),
                     Column(
@@ -80,25 +103,28 @@ class _HomeState extends State<Home> {
                         Text('Nama Property'),
                         SizedBox(height: 20,),
                         Container( height:100, width: 100,
-                          child: Text('Lorem ipsum dolor sit amet, consetetur sadipscing elitr,\n sed diam nonumy eirmod '))
+                          child: Text('Lorem ipsum dolor sit amet, consetetur '))
                       ],
                     )
                   ],
                 ),
+               ),
               ),
               ),
               SizedBox(height: 10,
               ),
-              Container(
-                height: 150,
-                width: 360,
-                 child: Card(
+              Card(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0),
                   ),
-                  color: Colors.grey,
+                  color: Colors.blueGrey,
                   elevation: 20,
-                  child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  child: SizedBox(
+                   height: 150,
+                   width: 360,
+                   child: InkWell(splashColor: Colors.deepPurple,
+                   onTap: (){},
+                   child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Image(image: AssetImage('asset/logo/prop1.png'),width: 120,),
                     Column(
@@ -106,25 +132,28 @@ class _HomeState extends State<Home> {
                         Text('Nama Property'),
                         SizedBox(height: 20,),
                         Container( height:100, width: 100,
-                          child: Text('Lorem ipsum dolor sit amet, consetetur sadipscing elitr,\n sed diam nonumy eirmod '))
+                          child: Text('Lorem ipsum dolor sit amet, consetetur '))
                       ],
                     )
                   ],
                 ),
+               ),
               ),
               ),
               SizedBox(height: 10,
               ),
-              Container(
-                height: 150,
-                width: 360,
-                 child: Card(
+              Card(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0),
                   ),
-                  color: Colors.grey,
+                  color: Colors.blueGrey,
                   elevation: 20,
-                  child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  child: SizedBox(
+                   height: 150,
+                   width: 360,
+                   child: InkWell(splashColor: Colors.deepPurple,
+                   onTap: (){},
+                   child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Image(image: AssetImage('asset/logo/prop1.png'),width: 120,),
                     Column(
@@ -132,13 +161,16 @@ class _HomeState extends State<Home> {
                         Text('Nama Property'),
                         SizedBox(height: 20,),
                         Container( height:100, width: 100,
-                          child: Text('Lorem ipsum dolor sit amet, consetetur sadipscing elitr,\n sed diam nonumy eirmod '))
+                          child: Text('Lorem ipsum dolor sit amet, consetetur '))
                       ],
                     )
                   ],
                 ),
+               ),
               ),
-              )
+              ),
+              SizedBox(height: 10,
+              ),
             ],
           )
         ],

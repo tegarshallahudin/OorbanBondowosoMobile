@@ -13,7 +13,7 @@ class Register extends StatelessWidget {
       resizeToAvoidBottomInset: false,
      body: Container(
        decoration: BoxDecoration(
-         image: DecorationImage(image: AssetImage('asset/logo/vektor5.png',),
+         image: DecorationImage(image: AssetImage('asset/logo/vektor5.png'),
          fit: BoxFit.cover)
        ),
        child: Column(children:<Widget>[

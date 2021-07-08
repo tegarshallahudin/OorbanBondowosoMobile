@@ -23,6 +23,17 @@ TextStyle whiteTextStlye = GoogleFonts.poppins(
  fontWeight: FontWeight.w500,
  color: whiteColor, 
 );
+TextStyle whiteTextStlye20 = GoogleFonts.poppins(
+ fontWeight: FontWeight.w500,
+ fontSize: 20,
+ color: whiteColor, 
+);
+
+TextStyle greyTextStlye10 = GoogleFonts.poppins(
+ fontWeight: FontWeight.w500,
+ fontSize: 10,
+ color: greyColor, 
+);
 
 TextStyle greyTextStlye = GoogleFonts.poppins(
  fontWeight: FontWeight.w300,

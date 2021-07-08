@@ -32,7 +32,7 @@ class OnBoarding1 extends StatelessWidget {
                               );
                             },
                   child: Text('Lewati',
-                  style: blackTextStlye.copyWith(
+                  style: greyTextStlye10.copyWith(
                     fontSize: 14,),
                  ),
                 ),
@@ -76,9 +76,8 @@ class OnBoarding1 extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                   builder: (context) => OnBoarding2()),
-                            );}, child: Text('Berikutnya -->', style: blackTextStlye,),
+                            );}, child: Text('Berikutnya', style: blackTextStlye,),
               style: ButtonStyle(
-                
                 backgroundColor: MaterialStateProperty.all(greenColor),
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(

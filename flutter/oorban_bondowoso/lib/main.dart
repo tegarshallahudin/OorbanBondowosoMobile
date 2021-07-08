@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oorban_bondowoso/page/OnBoarding1.dart';
 import 'package:oorban_bondowoso/page/OnBoarding2.dart';
 import 'package:oorban_bondowoso/page/OnBoarding3.dart';
 import 'package:oorban_bondowoso/page/home.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Home(),
+      home:Home(),
     );
   }
 }
