@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:oorban_bondowoso/page/OnBoarding1.dart';
 import 'package:oorban_bondowoso/page/OnBoarding2.dart';
 import 'package:oorban_bondowoso/page/OnBoarding3.dart';
+import 'package:oorban_bondowoso/page/Riwayat.dart';
+import 'package:oorban_bondowoso/page/favorite.dart';
 import 'package:oorban_bondowoso/page/home.dart';
 import 'package:oorban_bondowoso/page/login.dart';
+import 'package:oorban_bondowoso/page/profile.dart';
 import 'package:oorban_bondowoso/page/registrasi.dart';
 import 'package:oorban_bondowoso/page/splash.dart';
 
@@ -22,7 +25,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:Home(),
+      home:Riwayat()
     );
   }
 }

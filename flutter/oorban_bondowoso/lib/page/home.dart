@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:oorban_bondowoso/layout.dart';
 import 'package:oorban_bondowoso/layout.dart';
 import 'package:oorban_bondowoso/page/login.dart';
+import 'package:oorban_bondowoso/page/profile.dart';
+import 'package:oorban_bondowoso/page/registrasi.dart';
 import 'package:oorban_bondowoso/theme.dart';
 
 class Home extends StatefulWidget {
@@ -11,10 +13,57 @@ class Home extends StatefulWidget {
   _HomeState createState() => _HomeState();}
 
 class _HomeState extends State<Home> {
+  int _currentIndex = 0;
+
+  final tabs =[
+    Profil(),
+    Home(),
+    Register(),
+    Login()
+  ];
+
+  void _onItemTap(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
+      bottomNavigationBar : BottomNavigationBar(
+        currentIndex: _currentIndex,
+        type: BottomNavigationBarType.shifting,
+        iconSize: 25,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),                    
+            title: Text('Profile'),
+            backgroundColor: Colors.blueGrey
+            ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),                    
+            title: Text('Home'),
+            backgroundColor: Colors.blueAccent
+            ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),                    
+            title: Text('Favorite'),
+            backgroundColor: Colors.redAccent
+            ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.calendar_today),                    
+            title: Text('Riwayat'),
+            backgroundColor: Colors.lightGreen
+            ),
+        ],
+        onTap: (index) {
+            setState(() {
+              _currentIndex =index;
+            });
+        }
+        ),
       body: Container(
       width: double.infinity,
       decoration: BoxDecoration(
