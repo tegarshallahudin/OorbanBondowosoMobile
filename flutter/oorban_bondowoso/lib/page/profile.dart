@@ -21,7 +21,6 @@ class _ProfilState extends State<Profil> {
   final tabs =[
     Profil(),
     Home(),
-    Favorite(),
     Riwayat()
   ];
 
@@ -34,50 +33,17 @@ class _ProfilState extends State<Profil> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
-      bottomNavigationBar : BottomNavigationBar(
-        currentIndex: _currentIndex,
-        type: BottomNavigationBarType.shifting,
-        iconSize: 25,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),                    
-            title: Text('Profile'),
-            backgroundColor: Colors.blueGrey
-            ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),                    
-            title: Text('Home'),
-            backgroundColor: Colors.blueAccent
-            ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),                    
-            title: Text('Favorite'),
-            backgroundColor: Colors.redAccent
-            ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_today),                    
-            title: Text('Riwayat'),
-            backgroundColor: Colors.lightGreen
-            ),
-        ],
-        onTap: (index) {
-            setState(() {
-              _currentIndex =index;
-            });
-        }
-        ),
       body: Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        image: DecorationImage(image: AssetImage('asset/logo/vektor2.png'),
+        image: DecorationImage(image: AssetImage('asset/logo/vektor6.png'),
         fit: BoxFit.cover)),
       child: Column(
         children: <Widget>[
           Stack(
             children: [
               Container( 
-                height: 130,
+                height: 80,
                 width: MediaQuery.of(context).size.width,
                 color: Colors.blueGrey,
                 child :Row(
@@ -85,12 +51,11 @@ class _ProfilState extends State<Profil> {
                     Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(top: 70, left: 8),
+                          padding: const EdgeInsets.only(top: 15, left: 8),
                           child:Padding(
                             padding: const EdgeInsets.all(5.0),
                             child: Row(mainAxisAlignment: MainAxisAlignment.start,
                               children:<Widget>[
-                                Icon(Icons.arrow_back, color: whiteColor, size: 20,),
                                 Padding(padding: const EdgeInsets.only(left: 20)),
                                 Text('Profile',style: whiteTextStlye20,),
                                 Padding(
@@ -121,17 +86,59 @@ class _ProfilState extends State<Profil> {
                   child: SizedBox(
                    height: 60,
                    width: 340,
-                   child: InkWell(splashColor: Colors.greenAccent,
+                   child: InkWell(splashColor: Colors.blueAccent,
                    onTap: (){},
-                   child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                   child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Icon(Icons.person),
-                    Text('PERBARUI PROFIL ANDA'),
+                    Text('Lengkapi Profil Anda'),
                   ],
                 ),
                ),
               ),
               ),
+              SizedBox(
+                height: 20,
+              ),
+              Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  color: Colors.blueGrey,
+                  elevation: 20,
+                  child: SizedBox(
+                   height: 60,
+                   width: 340,
+                   child: InkWell(splashColor: Colors.redAccent,
+                   onTap: (){},
+                   child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Icon(Icons.favorite),
+                    Text('Property Yang Anda Sukai'),
+                  ],
+                ),
+               ),
+              ),
+              ),
+            SizedBox(
+              height: 20,
+            ),
+            SizedBox(
+              width: 300,
+              child: ElevatedButton( onPressed: (){Navigator.push(
+               context,
+                MaterialPageRoute(
+                  builder: (context) => Register()),
+                  );}, child: Text('Log Out',style: blackTextStlye,),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.red[800]),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  )
+                ),
+              )),
+            ),
             ],
           )
         ],

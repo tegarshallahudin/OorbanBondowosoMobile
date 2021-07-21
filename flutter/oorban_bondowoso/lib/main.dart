@@ -5,6 +5,7 @@ import 'package:oorban_bondowoso/page/OnBoarding3.dart';
 import 'package:oorban_bondowoso/page/Riwayat.dart';
 import 'package:oorban_bondowoso/page/favorite.dart';
 import 'package:oorban_bondowoso/page/home.dart';
+import 'package:oorban_bondowoso/page/home_page.dart';
 import 'package:oorban_bondowoso/page/login.dart';
 import 'package:oorban_bondowoso/page/profile.dart';
 import 'package:oorban_bondowoso/page/registrasi.dart';
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:Riwayat()
+      // home: SpalshPage()
+      home: Home()
     );
   }
 }

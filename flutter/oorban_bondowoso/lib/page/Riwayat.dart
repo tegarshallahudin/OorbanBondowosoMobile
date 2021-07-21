@@ -23,7 +23,6 @@ class _RiwayatState extends State<Riwayat> {
   final tabs =[
     Profil(),
     Home(),
-    Favorite(),
     Riwayat()
   ];
 
@@ -36,39 +35,6 @@ class _RiwayatState extends State<Riwayat> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
-      bottomNavigationBar : BottomNavigationBar(
-        currentIndex: _currentIndex,
-        type: BottomNavigationBarType.shifting,
-        iconSize: 25,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),                    
-            title: Text('Profile'),
-            backgroundColor: Colors.blueGrey
-            ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),                    
-            title: Text('Home'),
-            backgroundColor: Colors.blueAccent
-            ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),                    
-            title: Text('Favorite'),
-            backgroundColor: Colors.redAccent
-            ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_today),                    
-            title: Text('Riwayat'),
-            backgroundColor: Colors.lightGreen
-            ),
-        ],
-        onTap: (index) {
-            setState(() {
-              _currentIndex =index;
-            });
-        }
-        ),
       body: Container(
       width: double.infinity,
       decoration: BoxDecoration(
