@@ -7,7 +7,7 @@ import 'package:oorban_bondowoso/page/login.dart';
 class ApiService {
 
 
-  static final String _DOMAIN = "192.168.1.16:8000";
+  static final String _DOMAIN = "192.168.1.19:8000";
   static final String _BASE_URL = _DOMAIN + "api/";
 
   static Future<GetLogin> login(String username, String password) async {

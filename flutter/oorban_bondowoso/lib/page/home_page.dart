@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:oorban_bondowoso/config/api_service.dart';
 import 'package:oorban_bondowoso/model/get_property.dart';
 import 'package:http/http.dart' as http;
+import 'package:oorban_bondowoso/page/detail.dart';
 
 import '../theme.dart';
 
@@ -16,7 +17,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  String _domain = "http://192.168.1.16:8000/";
+  String _domain = "http://192.168.1.19:8000/";
   late List<DataProperty> _property;
 
   @override
@@ -61,20 +62,21 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
   Widget propertyItem(DataProperty data) {
     return Card(
         margin: EdgeInsets.only(bottom: 20.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20.0),
         ),
-        color: Colors.red,
+        color: Colors.blueGrey,
         elevation: 50,
         child: SizedBox(
           height: 160,
           width: 340,
           child: InkWell(splashColor: Colors.deepPurple,
-              onTap: (){},
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => DetailPage(data: data,)));
+              },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
@@ -92,7 +94,8 @@ class _HomePageState extends State<HomePage> {
                       Text('${data.namaPemilik}'),
                       SizedBox(height: 20,),
                       Container( height:100, width: 100,
-                        child: Text('Lorem ipsum dolor sit amet, consetetur '))
+                        child: Text('${data.keterangan}'),
+                        ),
                     ],
                   )
                 ],

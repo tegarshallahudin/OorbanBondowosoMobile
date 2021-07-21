@@ -4,6 +4,7 @@ import 'package:oorban_bondowoso/layout.dart';
 import 'package:oorban_bondowoso/page/Riwayat.dart';
 import 'package:oorban_bondowoso/page/favorite.dart';
 import 'package:oorban_bondowoso/page/home.dart';
+import 'package:oorban_bondowoso/page/lengkapi_profil.dart';
 import 'package:oorban_bondowoso/page/login.dart';
 import 'package:oorban_bondowoso/page/registrasi.dart';
 import 'package:oorban_bondowoso/theme.dart';
@@ -33,45 +34,14 @@ class _ProfilState extends State<Profil> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SafeArea(
+        child : Container(
       width: double.infinity,
       decoration: BoxDecoration(
         image: DecorationImage(image: AssetImage('asset/logo/vektor6.png'),
         fit: BoxFit.cover)),
       child: Column(
         children: <Widget>[
-          Stack(
-            children: [
-              Container( 
-                height: 80,
-                width: MediaQuery.of(context).size.width,
-                color: Colors.blueGrey,
-                child :Row(
-                  children: [
-                    Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 15, left: 8),
-                          child:Padding(
-                            padding: const EdgeInsets.all(5.0),
-                            child: Row(mainAxisAlignment: MainAxisAlignment.start,
-                              children:<Widget>[
-                                Padding(padding: const EdgeInsets.only(left: 20)),
-                                Text('Profile',style: whiteTextStlye20,),
-                                Padding(
-                                padding: const EdgeInsets.only(left: 130.0),
-                                child:Image(image: AssetImage('asset/logo/Group_1.png'), height: 45.0,)),
-                              ],
-                            ),
-                          )
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-                ),
-            ],
-          ),
           SizedBox(height: 30,
           ),
           Column(
@@ -87,7 +57,11 @@ class _ProfilState extends State<Profil> {
                    height: 60,
                    width: 340,
                    child: InkWell(splashColor: Colors.blueAccent,
-                   onTap: (){},
+                   onTap: (){Navigator.push(
+                  context,
+                   MaterialPageRoute(
+                     builder: (context) => lkp_profil()),
+                      );  },
                    child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Icon(Icons.person),
@@ -110,7 +84,11 @@ class _ProfilState extends State<Profil> {
                    height: 60,
                    width: 340,
                    child: InkWell(splashColor: Colors.redAccent,
-                   onTap: (){},
+                   onTap: (){Navigator.push(
+                  context,
+                   MaterialPageRoute(
+                     builder: (context) => Favorite()),
+                      ); },
                    child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Icon(Icons.favorite),
@@ -128,7 +106,7 @@ class _ProfilState extends State<Profil> {
               child: ElevatedButton( onPressed: (){Navigator.push(
                context,
                 MaterialPageRoute(
-                  builder: (context) => Register()),
+                  builder: (context) => Login()),
                   );}, child: Text('Log Out',style: blackTextStlye,),
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(Colors.red[800]),
@@ -143,6 +121,7 @@ class _ProfilState extends State<Profil> {
           )
         ],
       ),
+    )
     )
     );
   }

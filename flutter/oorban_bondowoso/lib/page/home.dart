@@ -39,6 +39,25 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Image.asset('asset/logo/Group_1.png',
+        height: 100,
+        width: 100,
+        ),
+        backgroundColor: Colors.blueGrey,
+        actions: <Widget>[
+        IconButton(
+          tooltip: 'Search',
+          icon: Icon(Icons.search), 
+          onPressed: () {Navigator.push(
+               context,
+                MaterialPageRoute(
+                  builder: (context) => Home()),
+                  );  }, 
+          ),
+         ]
+        ),
       resizeToAvoidBottomInset: false,
       bottomNavigationBar : BottomNavigationBar(
         currentIndex: _currentIndex,

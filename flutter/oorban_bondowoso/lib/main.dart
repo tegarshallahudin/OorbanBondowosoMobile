@@ -11,7 +11,7 @@ import 'package:oorban_bondowoso/page/profile.dart';
 import 'package:oorban_bondowoso/page/registrasi.dart';
 import 'package:oorban_bondowoso/page/splash.dart';
 
-void main() {
+void main() { 
   runApp(MyApp());
 }
 
