@@ -20,6 +20,7 @@ class Register extends StatelessWidget {
     ApiService.newRegister(nama.text, username.text, email.text, password.text).then((response)async{
       if (response.masssage.contains('Sukses')){
         print('Berhasil');
+        Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
         // Toast.show('Berhasil Mendaftar',context);
         // await Fluttertoast.showToast(
         //   msg: 'Berhasil Mendaftar'
@@ -126,7 +127,7 @@ class Register extends StatelessWidget {
                               fillColor: Colors.white,
                               filled: true,
                               contentPadding: EdgeInsets.all(8.0)),
-                          keyboardType: TextInputType.text,
+                          keyboardType: TextInputType.visiblePassword,
                           maxLines: 1,
                             ),
                           ),
@@ -135,7 +136,6 @@ class Register extends StatelessWidget {
                         padding: const EdgeInsets.all(8.0),
                         child: Container(
                           child: TextFormField( 
-                            maxLength: 16,
                             controller: email,
                             decoration: InputDecoration(
                               hintText: 'Masukkan disini',

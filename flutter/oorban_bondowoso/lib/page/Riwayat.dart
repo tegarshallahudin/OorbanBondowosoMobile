@@ -35,26 +35,34 @@ class _RiwayatState extends State<Riwayat> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-        image: DecorationImage(image: AssetImage('asset/logo/vektor2.png'),
-        fit: BoxFit.cover)),
-      child: Column(
-        children: <Widget>[
-          SizedBox(height: 30,
-          ),
-          Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              Text('Riwayat Transaksi Anda'),
-              SizedBox(height: 20,),
+      resizeToAvoidBottomInset: false,
+      body: SafeArea(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children:[
+                  Padding(
+                    padding: const EdgeInsets.only(right: 240),
+                    child: Text('Riwayat Anda',style: blackTextStlye,),
+                  ),
+                  Image(image: AssetImage('asset/logo/line1.png'))
+                ]
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
               Card(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  color: Colors.blueGrey,
-                  elevation: 20,
+                  color: Colors.white,
+                  elevation: 10,
                   child: SizedBox(
                    height: 60,
                    width: 340,
@@ -76,10 +84,8 @@ class _RiwayatState extends State<Riwayat> {
                ),
               ),
               ),
-            ],
-          )
-        ],
-      ),
+          ],
+        ),
     )
     );
   }

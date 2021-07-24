@@ -6,7 +6,6 @@ import 'package:oorban_bondowoso/page/home_page.dart';
 import 'package:oorban_bondowoso/page/login.dart';
 import 'package:oorban_bondowoso/page/profile.dart';
 import 'package:oorban_bondowoso/page/registrasi.dart';
-import 'package:oorban_bondowoso/page/riwayat_page.dart';
 import 'package:oorban_bondowoso/theme.dart';
 
 class Home extends StatefulWidget {
@@ -45,18 +44,7 @@ class _HomeState extends State<Home> {
         height: 100,
         width: 100,
         ),
-        backgroundColor: Colors.blueGrey,
-        actions: <Widget>[
-        IconButton(
-          tooltip: 'Search',
-          icon: Icon(Icons.search), 
-          onPressed: () {Navigator.push(
-               context,
-                MaterialPageRoute(
-                  builder: (context) => Home()),
-                  );  }, 
-          ),
-         ]
+        backgroundColor: Colors.white
         ),
       resizeToAvoidBottomInset: false,
       bottomNavigationBar : BottomNavigationBar(
@@ -66,7 +54,7 @@ class _HomeState extends State<Home> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),                    
-            title: Text('Home'),
+            title: Text('Beranda'),
             backgroundColor: Colors.lightGreen
             ),
           BottomNavigationBarItem(
@@ -76,7 +64,7 @@ class _HomeState extends State<Home> {
             ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),                    
-            title: Text('Profile'),
+            title: Text('Profil'),
             backgroundColor: Colors.lightGreen
             ),
           // BottomNavigationBarItem(

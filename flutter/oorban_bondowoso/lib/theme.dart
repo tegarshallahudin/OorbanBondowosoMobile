@@ -19,6 +19,12 @@ TextStyle blackTextStlye20 = GoogleFonts.poppins(
  color: blackColor,
 );
 
+TextStyle blackTextStlye10 = GoogleFonts.poppins(
+ fontWeight: FontWeight.w500,
+ fontSize: 14,
+ color: blackColor,
+);
+
 TextStyle whiteTextStlye = GoogleFonts.poppins(
  fontWeight: FontWeight.w500,
  color: whiteColor, 

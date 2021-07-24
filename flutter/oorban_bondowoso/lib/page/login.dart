@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:oorban_bondowoso/config/api_service.dart';
+import 'package:oorban_bondowoso/model/get_login.dart';
 import 'package:oorban_bondowoso/page/OnBoarding1.dart';
 import 'package:oorban_bondowoso/page/OnBoarding2.dart';
 import 'package:oorban_bondowoso/page/home.dart';
 import 'package:oorban_bondowoso/page/registrasi.dart';
 import 'package:oorban_bondowoso/theme.dart';
 import 'package:flutter/gestures.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Login extends StatelessWidget {
   Login({Key? key}) : super(key: key);
@@ -16,9 +18,11 @@ class Login extends StatelessWidget {
   final password = TextEditingController();
 
   processlogin(context){
-    ApiService.login(username.text, password.text).then((response)async{
+    ApiService.login(username.text, password.text).then((response) async {
       if (response.masssage.contains('Sukses')){
         print('Berhasil');
+        await saveLoginSession(response.data);
+        Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
         // Toast.show('Berhasil Mendaftar',context);
         // await Fluttertoast.showToast(
         //   msg: 'Selamat Datang'
@@ -31,8 +35,16 @@ class Login extends StatelessWidget {
         // Toast.show('Gagal Mendaftar',context);
       }
     }).catchError((e){
-      print('eror');
+      print('error : $e');
     });
+  }
+
+  saveLoginSession(Data data) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setInt('id_user', data.id);
+    prefs.setString('nama_lengkap', data.namaLengkap);
+    prefs.setString('email', data.email);
+    prefs.commit();
   }
 
   @override

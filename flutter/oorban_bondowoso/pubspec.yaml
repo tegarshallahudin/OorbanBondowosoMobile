@@ -30,10 +30,12 @@ dependencies:
   url_launcher: ^6.0.6
   http: ^0.13.3
   fluttertoast: ^8.0.7
+  shared_preferences: ^2.0.5
   # toast: ^0.1.5
   
 
 dev_dependencies:
+  intl: any
   flutter_test:
     sdk: flutter
 
