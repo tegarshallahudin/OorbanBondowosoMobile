@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:oorban_bondowoso/layout.dart';
 import 'package:oorban_bondowoso/layout.dart';
@@ -17,6 +19,9 @@ class Profil extends StatefulWidget {
   _ProfilState createState() => _ProfilState();
 }
 class _ProfilState extends State<Profil> {
+
+  // var list;
+  // var random;
 
   int? _idUser;
   String? _namaLengkap;
@@ -40,8 +45,18 @@ class _ProfilState extends State<Profil> {
   @override
   void initState() { 
     super.initState();
+    // random = Random();
+    // list = List.generate(random.nextInt(10), (i) => "Item $i");
     getLoginSession();
   }
+  // Future <Null> refreshList() async {
+  //   await Future.delayed(Duration(seconds: 2));
+    
+  //   setState(() {
+  //     list = List.generate(random.nextInt(10), (i) => "Item $i");
+  //   });
+  //   return null; 
+  // }
 
   getLoginSession() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -62,17 +77,26 @@ class _ProfilState extends State<Profil> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-      child: Column(
+      child: ListView(
         children: <Widget>[
           SizedBox(height: 10,),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
-              Padding(
-                padding: const EdgeInsets.only(right : 280.0),
-                child: Text('Data Profil',style: blackTextStlye,),
-              ),
+              // RefreshIndicator(
+              //   child: ListView.builder(
+              //     itemCount: list?.length,
+              //     itemBuilder: (context,i) => ListTile(
+              //       title: Text (list[i]),
+              //     )
+              //     ),
+              //      onRefresh: refreshList
+              //      ),
+                 Padding(
+                  padding: const EdgeInsets.only(right : 280.0),
+                  child: Text('Data Profil',style: blackTextStlye,),
+                ),
               Image(image: AssetImage('asset/logo/line1.png'))
                 ],
               ),
@@ -88,21 +112,15 @@ class _ProfilState extends State<Profil> {
                Column( mainAxisAlignment: MainAxisAlignment.start,
                  children: [
                    Padding(
-                     padding: const EdgeInsets.only(right : 32.0),
+                     padding: const EdgeInsets.all(8.0),
                      child: Text('${this._namaLengkap}', style: blackTextStlye,),
                    ),
-                   SizedBox(
-                     height: 10,
-                     ),
                    Padding(
-                     padding: const EdgeInsets.only(right: 82.0),
+                     padding: const EdgeInsets.all(8.0),
                      child: Text(this._noHp != null ? '${this._noHp}' : '-'),
                    ),
-                   SizedBox(
-                     height: 10,
-                     ),
                    Padding(
-                     padding: const EdgeInsets.only(right: 5.0),
+                     padding: const EdgeInsets.all(8.0),
                      child: Text('${this._email}'),
                    )
                  ],

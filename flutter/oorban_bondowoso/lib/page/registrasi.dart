@@ -117,6 +117,7 @@ class Register extends StatelessWidget {
                           child: TextFormField( 
                             maxLength: 16,
                             controller: password,
+                            obscureText: true,
                             decoration: InputDecoration(
                               hintText: 'Masukkan disini',
                               labelText: 'Password',
@@ -178,7 +179,7 @@ class Register extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 20),
                   child: Container(
                     width: 300,
-                    child: Text('By continuing, you agree to Oorban Bondowoso Terms of Service, Privacy policy.',textAlign: TextAlign.center,style: TextStyle(color: Colors.grey),)),
+                    child: Text('Dengan melanjutkan, Anda menyetujui Persyaratan Layanan, Kebijakan Privasi Oorban Bondowoso.',textAlign: TextAlign.center,style: TextStyle(color: Colors.grey),)),
                 ),
                 SizedBox(
                   height: 20
@@ -187,11 +188,11 @@ class Register extends StatelessWidget {
                 textAlign: TextAlign.center,
                 text: TextSpan(children: [
                   TextSpan(
-                    text: " Do you have an account ? ",
+                    text: " Apakah kamu punya akun ? ",
                     style: TextStyle(color: Colors.black)
                   ),
                   TextSpan(
-                      text: " Login now ",
+                      text: " Masuk sekarang ",
                       style: TextStyle(
                         color: Colors.blue,
                       ),

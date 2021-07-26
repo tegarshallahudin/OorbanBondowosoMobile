@@ -22,7 +22,7 @@ class DetailPage extends StatefulWidget {
 
 class _DetailPageState extends State<DetailPage> {
   String _domain = "https://wsjti.id/Oorbanbondowoso/public/";
-  String _whatsappUrl = "https://api.whatsapp.com/send?phone=6285724662512&text=";
+  String _whatsappUrl = "https://api.whatsapp.com/send?phone=6285724662512&text=Saya20%Tertarik20%Dengan20%Properti20%Ini";
   final oCcy = new NumberFormat("#,##0.00", "id_ID");
   bool _isFavorit = false;
   late int _idUser;
@@ -233,7 +233,7 @@ class _DetailPageState extends State<DetailPage> {
                           padding: const EdgeInsets.all(8.0),
                           child: Text('Detail Rumah', style: blackTextStlye10,),
                         ),
-                      Image(image: AssetImage('asset/logo/line2.png')),
+                      Image(image: AssetImage('asset/logo/line1.png')),
                       SizedBox(
                         height: 20,
                         ),
@@ -242,49 +242,49 @@ class _DetailPageState extends State<DetailPage> {
                      Column( mainAxisAlignment: MainAxisAlignment.center,
                        children: [
                          Padding(
-                           padding: const EdgeInsets.only(right: 5.0),
+                           padding: const EdgeInsets.all(8.0),
                            child: Text('Umur bangunan : ${widget.data.umurBangunan} Tahun'),
                          ),
                          SizedBox(
                         height: 10,
                         ),
                          Padding(
-                           padding: const EdgeInsets.only(right: 34.0),
+                           padding: const EdgeInsets.all(8.0),
                            child: Text('Luas tanah : ${widget.data.luasTanah} m²'),
                          ),
                          SizedBox(
                         height: 10,
                         ),
                          Padding(
-                           padding: const EdgeInsets.only(right:1.0),
+                           padding: const EdgeInsets.all(8.0),
                            child: Text('Luas bangunan : ${widget.data.luasBangunan} m²'),
                          ),
                          SizedBox(
                         height: 10,
                         ),
                          Padding(
-                           padding: const EdgeInsets.only(right:34.0),
+                           padding: const EdgeInsets.all(8.0),
                            child: Text('Luas lantai : ${widget.data.lantai} Lantai '),
                          ),
                          SizedBox(
                         height: 10,
                         ),
                          Padding(
-                           padding: const EdgeInsets.only(right:26.0),
+                           padding: const EdgeInsets.all(8.0),
                            child: Text('Tahun dibangun : ${widget.data.tahunDibangun}'),
                          ),
                          SizedBox(
                         height: 10,
                         ),
                          Padding(
-                           padding: const EdgeInsets.only(right:51.0),
+                           padding: const EdgeInsets.all(8.0),
                            child: Text('Keterangan : ${widget.data.keterangan}'),
                          ),
                          SizedBox(
                         height: 10,
                         ),
                          Padding(
-                           padding: const EdgeInsets.only(right:70.0),
+                           padding: const EdgeInsets.all(8.0),
                            child: Text('Sertifikat : ${widget.data.sertifikat}'),
                          ),
                        ],

@@ -72,7 +72,7 @@ class Login extends StatelessWidget {
                   padding: const EdgeInsets.all(15.0),
                   child: Row(mainAxisAlignment: MainAxisAlignment.start,
                     children:[
-                      Text('Log in',style: blackTextStlye20,),
+                      Text('Masuk',style: blackTextStlye20,),
                     ],
                   ),
                 )
@@ -104,6 +104,7 @@ class Login extends StatelessWidget {
                   child: TextFormField( 
                     maxLength: 16,
                     controller: password,
+                    obscureText: true,
                     decoration: InputDecoration(
                       hintText: 'Masukkan disini',
                       labelText: 'Password',
@@ -129,7 +130,7 @@ class Login extends StatelessWidget {
               child: ElevatedButton( onPressed: (){ 
                 processlogin(context);
                 }, 
-                child: Text('Log in',style: blackTextStlye,),
+                child: Text('Masuk',style: blackTextStlye,),
                 style: ButtonStyle(
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(
@@ -155,10 +156,10 @@ class Login extends StatelessWidget {
               )),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 20),
-              child: Container(
+              padding: const EdgeInsets.only(top: 10),
+              child: Container( 
                 width: 300,
-                child: Text('By continuing, you agree to Oorban Bondowoso Terms of Service, Privacy policy.',textAlign: TextAlign.center,style: TextStyle(color: Colors.grey),)),
+                child: Text('Dengan melanjutkan, Anda menyetujui Persyaratan Layanan, Kebijakan Privasi Oorban Bondowoso.',textAlign: TextAlign.center,style: TextStyle(color: Colors.grey),)),
             ),
             SizedBox(
               height: 10
@@ -166,11 +167,11 @@ class Login extends StatelessWidget {
             textAlign: TextAlign.center,
             text: TextSpan(children: [
               TextSpan(
-                text: " wants more experience ? ",
+                text: " Ingin lebih banyak pengalaman? ",
                 style: TextStyle(color: Colors.black)
               ),
               TextSpan(
-                  text: " Register now ",
+                  text: " Registrasi sekarang ",
                   style: TextStyle(
                     color: Colors.blue,
                   ),

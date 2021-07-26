@@ -133,10 +133,10 @@ class _FavoriteState extends State<Favorite> {
                 padding: const EdgeInsets.only(top: 140.0, left: 20.0),
                 child: Text('Rp.${this.oCcy.format(double.parse(data.harga))}',style: whiteTextStlye,),
               ),
-              // Padding(
-              //   padding: const EdgeInsets.only(top: 10.0, left:330.0),
-              //   child: Icon(Icons.favorite, color: Colors.red[700], size: 35,)
-              // ),
+              Padding(
+                padding: const EdgeInsets.only(top: 10.0, left:330.0),
+                child: Icon(Icons.favorite, color: Colors.red[700], size: 35,)
+              ),
             ]
           ),
       ),

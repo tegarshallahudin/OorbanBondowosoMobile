@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:oorban_bondowoso/page/ErrorPage.dart';
 import 'package:oorban_bondowoso/page/home.dart';
 import 'package:oorban_bondowoso/page/splash.dart';
 
 void main() { 
+  ErrorWidget.builder = (FlutterErrorDetails details) => ErrorPage();
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 
@@ -17,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SplashPage()
+      home: Home()
       // home:Home()
     );
   }

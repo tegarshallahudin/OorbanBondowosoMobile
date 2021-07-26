@@ -103,7 +103,6 @@ class _HomePageState extends State<HomePage> {
                               hintStyle: TextStyle(
                                 color: Colors.black.withAlpha(120),
                               ),
-                              
                               border: InputBorder.none,
                             ),
                             // onChanged: onSearchChanged,
